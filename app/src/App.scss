@@ -1,0 +1,30 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+@font-face {
+    src: url(./fonts/Montserrat-Bold.otf);
+    font-family: mb;
+}
+
+@font-face {
+    src: url(./fonts/Montserrat-Regular.otf);
+    font-family: mr;
+}
+
+@font-face {
+    src: url(./fonts/Montserrat-SemiBold.otf);
+    font-family: ms;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: fit-content;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
