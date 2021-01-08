@@ -69,6 +69,10 @@ const Home = () => {
                 <p className={Styles.instruction}>Install calenda from npm by running <span> npm install calenda </span> in
             your
             terminal.</p>
+                <pre>
+                    <code>
+                    </code>
+                </pre>
                 <img src="./assets/step 1.PNG" alt="" />
 
                 <p className={Styles.step}>Step <span>2</span>: Initialize</p>
