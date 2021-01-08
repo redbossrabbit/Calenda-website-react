@@ -1,0 +1,119 @@
+.main {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.today {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 5px 40px;
+    border-radius: 50px;
+    text-align: center;
+    border: 1px #77acff solid;
+    width: fit-content;
+    cursor: pointer;
+    font-size: 10pt;
+    font-family: mr;
+}
+
+.card {
+    background-color: #f3f8ff;
+    margin: auto;
+    margin-top: 0px;
+    border-radius: 20px;
+    display: flex;
+    padding: 20px 0px;
+    margin-bottom: 10px;
+    flex-direction: column;
+    width: 100%;
+}
+
+.daysCont {
+    display: flex;
+    margin: auto;
+    margin-top: 10px;
+    width: 80%;
+}
+
+.monthYear {
+    display: flex;
+    margin: 10px auto;
+    width: 200px;
+    margin-top: 0px;
+    font-family: mb;
+    cursor: pointer;
+    text-align: center;
+
+    span {
+        color: #77acff;
+        cursor: pointer;
+    }
+
+
+    div {
+        margin: auto;
+        color: #77acff;
+        width: 10px;
+        height: 10px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    div:nth-child(1) {
+        margin-left: 0px;
+        background-image: url(../../../assets/arrow_0001_Polygon-1.png );
+    }
+
+    p {
+        margin: auto;
+    }
+
+    div:nth-child(3) {
+        margin-right: 0px;
+        background-image: url(../../../assets/arrow_0000_Polygon-1-copy.png );
+    }
+
+}
+
+.dayOfWeek {
+    font-size: 9pt;
+    margin: 10px auto;
+    color: #77acff;
+    margin-top: 0px;
+}
+
+.finalDate {
+    margin: 10px auto;
+    font-family: mb;
+    cursor: pointer;
+    margin: auto;
+    margin-top: 20px;
+
+    span {
+        color: #77acff;
+        cursor: pointer;
+    }
+}
+
+
+.weekCont {
+    margin: auto;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.isSetToToday {
+    background-color: #77acff;
+    color: white;
+}
+
+//RESPONSIVENESS
+@media screen and (max-width: 600px) {
+    .main {
+        width: 90%;
+    }
+}

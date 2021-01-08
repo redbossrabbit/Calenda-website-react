@@ -1,0 +1,306 @@
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.ham {
+    margin: auto;
+    display: none;
+}
+
+.black {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+}
+
+.nav {
+    width: 100vw;
+    display: flex;
+    height: var(--navHeight);
+    box-shadow: 0px 3px 5px rgba(0, 50, 121, 0.3);
+    font-family: 'Open Sans';
+    font-weight: bolder;
+    font-size: 16pt;
+    justify-content: space-between;
+    background-color: #fff;
+    position: fixed;
+    z-index: 1;
+
+    a {
+        color: rgb(12, 128, 216);
+        margin: auto;
+        margin-left: 5%;
+    }
+}
+
+.menus {
+    margin: auto;
+    display: flex;
+    width: 40%;
+    margin-right: 5%;
+
+    div {
+        margin: auto;
+        display: flex;
+        transition: 0.2s;
+
+        img {
+            margin: auto;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+
+            a {
+                color: rgb(12, 128, 216);
+            }
+        }
+    }
+
+
+    a {
+        color: black;
+        margin: auto;
+        margin-left: 5px;
+        font-family: 'Calibri';
+        font-weight: lighter;
+        font-size: 11pt;
+    }
+}
+
+.header {
+    display: flex;
+    background-color: rgb(12, 128, 216);
+    box-shadow: 0px 3px 5px rgba(0, 110, 255, 0.3);
+    flex-direction: column;
+    padding-top: calc(10vh + var(--navHeight));
+    padding-bottom: 10vh;
+    width: 100%;
+    color: white;
+
+    h1,
+    p {
+        margin: auto;
+        width: 50%;
+        text-align: center;
+    }
+
+    h1 {
+        font-family: mb;
+        font-size: 40pt;
+        margin-bottom: 0px;
+    }
+
+    p {
+        margin-top: 30px;
+        margin-bottom: 0px;
+        font-size: 14pt;
+        font-family: 'Roboto';
+    }
+
+    a {
+        color: rgb(0, 62, 109);
+        box-shadow: 0px 3px 5px rgba(0, 55, 128, 0.3);
+        font-family: mb;
+        font-size: 11pt;
+        margin: auto;
+        margin-top: 50px;
+        padding: 15px 30px;
+        background-color: rgb(0, 195, 255);
+        transition: 0.2s;
+
+        &:hover {
+            transform: scale(1.1);
+            background-color: #fff;
+        }
+
+        svg {
+            margin: auto;
+        }
+    }
+}
+
+.hero {
+    color: rgb(0, 62, 109);
+    margin: auto;
+    margin-top: 100px;
+    font-family: mb;
+    font-size: 20pt;
+
+    img {
+        margin-bottom: -10px;
+    }
+}
+
+.heroSuppTxt {
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 14pt;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.tryIt {
+    margin: auto;
+    margin-top: 50px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid rgb(12, 128, 216);
+    font-family: 'Roboto';
+    color: #003e6d;
+}
+
+.howItWorks {
+    padding: 50px 0px;
+    width: 80%;
+    margin: auto;
+    border-top: 3px solid rgb(12, 128, 216);
+    font-family: 'Roboto';
+    font-size: 30pt;
+    color: #003e6d;
+}
+
+.steps {
+    margin: auto;
+    width: 40%;
+    height: fit-content;
+    overflow: auto;
+    background-color: #f9f9f9;
+    padding: 0px 10%;
+    padding-bottom: 40px;
+
+    img {
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+}
+
+.step {
+    font-family: monospace;
+    font-weight: bolder;
+    font-size: 14pt;
+    margin-top: 50px;
+
+    span {
+        font-family: monospace;
+        font-size: 11pt;
+        color: rgb(12, 128, 216);
+    }
+}
+
+.instruction {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 12pt;
+    margin-top: 10px;
+
+    span {
+        font-family: monospace;
+        font-size: 11pt;
+        color: rgb(12, 128, 216);
+    }
+}
+
+.downloadBig {
+    @extend .hero;
+
+    img {
+        margin: auto;
+    }
+}
+
+
+.downloadZIP {
+    font-family: mb;
+    font-size: 11pt;
+    margin: auto;
+    margin-top: 30px;
+    padding: 20px 50px;
+    background-color: #00c3ff;
+    transition: 0.2s;
+    display: flex;
+    box-shadow: 0px 3px 5px rgba(0, 50, 121, 0.3);
+
+    a,
+    img {
+        margin: auto;
+    }
+
+    a {
+        color: rgb(0, 62, 109);
+        margin-right: 10px;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.getNPM {
+    margin: 20px auto;
+    font-family: 'Segoe UI';
+    color: rgb(12, 128, 216);
+}
+
+.footer {
+    width: 100vw;
+    height: 200px;
+    background-color: rgb(0, 62, 109);
+    margin-top: 100px;
+}
+
+///RESPONSIVENESS
+@media screen and (max-width: 780px) {
+    .menus {
+        width: 60%;
+    }
+
+    .steps {
+        width: 70%;
+        padding: 0px 10%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .hero {
+        width: 70%;
+    }
+
+    .header {
+        h1 {
+            font-size: 30pt;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .menus {
+        display: none;
+    }
+
+    .ham {
+        display: block;
+        margin-right: 30px;
+    }
+
+    .steps {
+        width: 85%;
+        padding: 0px 5%;
+    }
+
+    .header {
+
+        h1,
+        p {
+            width: 80%;
+        }
+
+        p {
+            margin-top: 60px;
+        }
+    }
+}

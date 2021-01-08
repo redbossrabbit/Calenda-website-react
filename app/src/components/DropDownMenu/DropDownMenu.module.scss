@@ -1,0 +1,26 @@
+.dropDown {
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--navHeight);
+    z-index: 1;
+    position: fixed;
+    width: 100vw;
+    background-color: #fff;
+    padding-bottom: 10px;
+
+    div {
+        margin: auto;
+        margin-left: 20px;
+        font-family: 'Calibri';
+
+        a {
+            margin-left: 5px;
+            color: black;
+        }
+
+        svg {
+            margin: auto;
+        }
+    }
+}
