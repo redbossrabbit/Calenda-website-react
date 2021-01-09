@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Styles from './Home-styles.module.scss'
 import DropDownMenu from '../DropDownMenu/DropDownMenu'
 import Calendar from '../Calender/Calendar'
+import Highlight from '../../../node_modules/react-highlight'
 
 const Home = () => {
     let [dropdownOpen, setDropdownOpen] = useState(false);
@@ -36,10 +37,11 @@ const Home = () => {
                         <a href="#download">Download</a>
                     </div>
                 </div>
-                <img onClick={openDropdown} className={Styles.ham} id="ham" src={require("../../assets/hamburger.png")} width="25" height="25"
-                    alt="" />
+                <img onClick={openDropdown} className={Styles.ham} id="ham" src={require("../../assets/hamburger.png")}
+                    width="25" height="25" alt="" />
             </nav>
-            {dropdownOpen && <DropDownMenu />}
+            {dropdownOpen &&
+                <DropDownMenu />}
             {dropdownOpen && <div className={Styles.black} onClick={openDropdown}></div>}
 
             <header className={Styles.header}>
@@ -69,59 +71,112 @@ const Home = () => {
                 <p className={Styles.instruction}>Install calenda from npm by running <span> npm install calenda </span> in
             your
             terminal.</p>
-                <pre>
-                    <code>
-                    </code>
-                </pre>
-                <img src="./assets/step 1.PNG" alt="" />
-
+                <Highlight className='terminal'>
+                    {'npm install calenda'}
+                </Highlight>
                 <p className={Styles.step}>Step <span>2</span>: Initialize</p>
                 <p className={Styles.instruction}>Import calenda into your script and initialize a<span> new Calenda </span>
             with an
-            object argument specifying the month of  the year. <span>The year defaults to the current year
+            object argument specifying the month of the year. <span>The year defaults to the current year
                 you are in</span>.</p>
-                <img src="./assets/step 2.PNG" alt="" />
+                <Highlight className='javascript'>
+                    {`Import Calenda from 'calenda'
 
+const calendar = new Calenda({
+  month: 'January'
+});`}
+                </Highlight>
                 <p className={Styles.step}>Step <span>3</span>: Get the month structure</p>
                 <p className={Styles.instruction}>Call the <span> getStructure </span>method on the<span> calendar </span>
             object then
             get the <span>structure</span> property.</p>
-                <img src="./assets/step 3.PNG" alt="" />
-                <p className={Styles.instruction}>This returns an object of arrays with the days of the week as keys and an array of numbers as values which are the days of the month that fall on that day of the week as <span>shown below</span>.
+                <Highlight className='javascript'>
+                    {`calendar.getStructure().structure;`}
+                </Highlight>
+                <p className={Styles.instruction}>This returns an object of arrays with the days of the week as keys and an
+            array of numbers as values which are the days of the month that fall on that day of the week as <span>shown
+                below</span>.
         </p>
-                <img src="./assets/step 3-2.PNG" alt="" />
-
+                <Highlight className='terminal'>
+                    {`{
+  Sun: [ 0, 3, 10, 17, 24, 31 ],
+  Mon: [ 0, 4, 11, 18, 25 ],
+  Tue: [ 0, 5, 12, 19, 26 ],
+  Wed: [ 0, 6, 13, 20, 27 ],
+  Thu: [ 0, 7, 14, 21, 28 ],
+  Fri: [ 1, 8, 15, 22, 29 ],
+  Sat: [ 2, 9, 16, 23, 30 ]
+}`}
+                </Highlight>
                 <p className={Styles.step}>Step <span>4</span>: Get info</p>
                 <p className={Styles.instruction}>You can get the info of any day in the selected month by chaining the
             <span>getinfo</span>method to the<span> getStructure </span>method with the chosen date as the first
             argument and a set of options in object format as the second argument on the<span> getInfo </span>
             method.</p>
-                <img src="./assets/step 4.PNG" alt="" />
+                <Highlight className='javascript'>
+                    {`calendar.getStructure().getInfo(1, {
+  dayNumber: true,
+  dayOfWeek: true,
+  monthOfYear: true,
+  year: true,
+  suffix: true
+})`}
+                </Highlight>
                 <p className={Styles.instruction}>This returns information of the first day of the
             current month <span>January</span>
             as requested above as an object with the values of the specified options.</p>
-                <img src="./assets/step 4-2.PNG" alt="" />
-
+                <Highlight className='terminal'>
+                    {`{
+   dayNumber: 1,
+   dayOfWeek: 'Fri',
+   monthOfYear: 'January',
+   year: 2021,
+   suffix: 'st'
+}`}
+                </Highlight>
                 <p className={Styles.step}>Step <span>5</span>: Time travel</p>
                 <p className={Styles.instruction}>You can move forward or backward from the current month by calling the
             <span> moveMonth </span>method on the<span> calendar </span>object with either<span> 'forward' </span> or
             <span> 'backward' </span>as a string argument on the method. This method can be chained with other
             methods including itself to get your desired results.
-            <img src="./assets/step 5.PNG" alt="" />
-                    <p className={Styles.instruction}>This returns information of the first day of the
-                    next month <span>February</span>
-                as requested above  from the current month.</p>
-                    <img src="./assets/step 5-2.PNG" alt="" />
-                </p>
+            </p>
+                <Highlight className='javascript'>
+                    {`calendar.moveMonth('forward').getStructure().getInfo(1, {
+  dayNumber: true,
+  dayOfWeek: true,
+  monthOfYear: true,
+  year: true,
+  suffix: true
+})`}
+                </Highlight>
+                <p className={Styles.instruction}>This returns information of the first day of the
+                next month <span>February</span>
+                as requested above from the current month.
+            </p>
+                <Highlight className='terminal'>
+                    {`{
+   dayNumber: 1,
+   dayOfWeek: 'Mon',
+   monthOfYear: 'February',
+   year: 2021,
+   suffix: 'st'
+}`}
+                </Highlight>
+
             </div>
-            <h2 className={Styles.downloadBig} id="download">
-                <img src={require("../../assets/download.png")} width="18" height="20" alt="" /> Download
-    </h2>
             <div className={Styles.downloadZIP}>
-                <a href="">Download zip</a>
-                <img src={require("../../assets/zip.png")} width="20" height="25" alt="" />
+                <a href="../../data/calenda.js"><img src={require("../../assets/download.png")} width="10" height="12" alt="" /> Download</a>
             </div>
             <a href="" className={Styles.getNPM}>or get it on npm</a>
+            <a href="https//github.com/redbossrabbit">
+                <div className={Styles.contributors}>
+                    <h2>Contributor(s)</h2>
+                    <div className={Styles.profileImage}></div>
+                    <p>Ibeh Ubachukwu</p>
+                    <i>@redbossrabbit</i>
+                    <strong>Founder & Author</strong>
+                </div>
+            </a>
             <footer className={Styles.footer}></footer>
         </main>
     )
