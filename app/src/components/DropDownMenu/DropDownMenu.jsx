@@ -2,7 +2,8 @@ import React from 'react'
 import Styles from './DropDownMenu.module.scss'
 
 const DropDownMenu = ({ data }) => {
-    const { openDropdown, dropdownOpen } = data;
+    const [openDropdown, dropdownOpen] = data;
+
     return (
         <div className={`${Styles.dropdownCont} ${dropdownOpen ? Styles.animateDrop : ''}`}>
             <div className={Styles.dropdown} id="drop-down" onClick={openDropdown}>
@@ -12,7 +13,7 @@ const DropDownMenu = ({ data }) => {
                 </div>
                 <div>
                     <img src={require("../../assets/gears.png")} width="15" height="15" alt="" />
-                    <a href="#how-it-works">How it works</a>
+                    <a href="#how-to-use">How to use</a>
                 </div>
                 <div>
                     <svg height="12" viewBox="0 0 16 16" version="1.1" width="12" aria-hidden="true">

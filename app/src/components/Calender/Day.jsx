@@ -12,6 +12,7 @@ const Day = ({ id, setDayData }) => {
         setIsSetToToday(prev => prev ? !prev : prev);
         hasSelected = true;
     }
+
     return (
         <div
             onClick={changeColor}

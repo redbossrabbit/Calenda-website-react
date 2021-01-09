@@ -1,9 +1,12 @@
 import React from 'react'
+import Highlight from '../../../node_modules/react-highlight'
 
-export const CodeSnippets = () => {
+const CodeSnippets = ({ data }) => {
+    const [code, lang] = data;
     return (
-        <div>
-            
-        </div>
+        <Highlight className={lang}>
+            {code}
+        </Highlight>
     )
 }
+export default CodeSnippets;

@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
 import Styles from './Home-styles.module.scss'
+import CodeSnippets from '../CodeSnippets/CodeSnippets'
 import DropDownMenu from '../DropDownMenu/DropDownMenu'
 import Calendar from '../Calender/Calendar'
-import Highlight from '../../../node_modules/react-highlight'
+import languageData from '../../utils/codeTxt'
 
 const Home = () => {
     let [dropdownOpen, setDropdownOpen] = useState(false);
     const openDropdown = () => {
         setDropdownOpen(prev => !prev);
     }
-    const data = { openDropdown: openDropdown, dropdownOpen: dropdownOpen }
+    const setLangData = [...languageData];
+    const data = [openDropdown, dropdownOpen];
+
     return (
         <main className={Styles.main}>
             <nav className={Styles.nav}>
@@ -64,108 +67,73 @@ const Home = () => {
         scratch.<br />We've got
         you covered.
     </p>
-            <h2 className={Styles.howToUse} id="how-to-use"><img src={require("../../assets/gears.png")} width="40" height="40" alt="" /> How to use
+            <h2 className={Styles.howToUse} id="how-to-use"><img src={require("../../assets/gears.png")} width="40" height="40"
+                alt="" /> How to use
     </h2>
             <div className={Styles.steps}>
                 <p className={Styles.step}>Step <span>1</span>: Install</p>
                 <p className={Styles.instruction}>Install calenda from npm by running <span> npm install calenda </span> in
             your
             terminal.</p>
-                <Highlight className='terminal'>
-                    {'npm install calenda'}
-                </Highlight>
+
+                <CodeSnippets data={setLangData.splice(0, 1)[0]} />
+
                 <p className={Styles.step}>Step <span>2</span>: Initialize</p>
                 <p className={Styles.instruction}>Import calenda into your script and initialize a<span> new Calenda </span>
             with an
             object argument specifying the month of the year. <span>The year defaults to the current year
                 you are in</span>.</p>
-                <Highlight className='javascript'>
-                    {`Import Calenda from 'calenda'
 
-const calendar = new Calenda({
-  month: 'January'
-});`}
-                </Highlight>
+                <CodeSnippets data={setLangData.splice(0, 1)[0]} />
+
                 <p className={Styles.step}>Step <span>3</span>: Get the month structure</p>
                 <p className={Styles.instruction}>Call the <span> getStructure </span>method on the<span> calendar </span>
             object then
             get the <span>structure</span> property.</p>
-                <Highlight className='javascript'>
-                    {`calendar.getStructure().structure;`}
-                </Highlight>
+
+                <CodeSnippets data={setLangData.splice(0, 1)[0]} />
+
                 <p className={Styles.instruction}>This returns an object of arrays with the days of the week as keys and an
             array of numbers as values which are the days of the month that fall on that day of the week as <span>shown
                 below</span>.
         </p>
-                <Highlight className='terminal'>
-                    {`{
-  Sun: [ 0, 3, 10, 17, 24, 31 ],
-  Mon: [ 0, 4, 11, 18, 25 ],
-  Tue: [ 0, 5, 12, 19, 26 ],
-  Wed: [ 0, 6, 13, 20, 27 ],
-  Thu: [ 0, 7, 14, 21, 28 ],
-  Fri: [ 1, 8, 15, 22, 29 ],
-  Sat: [ 2, 9, 16, 23, 30 ]
-}`}
-                </Highlight>
+
+                <CodeSnippets data={setLangData.splice(0, 1)[0]} />
+
                 <p className={Styles.step}>Step <span>4</span>: Get info</p>
                 <p className={Styles.instruction}>You can get the info of any day in the selected month by chaining the
             <span>getinfo</span>method to the<span> getStructure </span>method with the chosen date as the first
             argument and a set of options in object format as the second argument on the<span> getInfo </span>
             method.</p>
-                <Highlight className='javascript'>
-                    {`calendar.getStructure().getInfo(1, {
-  dayNumber: true,
-  dayOfWeek: true,
-  monthOfYear: true,
-  year: true,
-  suffix: true
-})`}
-                </Highlight>
+
+                <CodeSnippets data={setLangData.splice(0, 1)[0]} />
+
                 <p className={Styles.instruction}>This returns information of the first day of the
             current month <span>January</span>
             as requested above as an object with the values of the specified options.</p>
-                <Highlight className='terminal'>
-                    {`{
-   dayNumber: 1,
-   dayOfWeek: 'Fri',
-   monthOfYear: 'January',
-   year: 2021,
-   suffix: 'st'
-}`}
-                </Highlight>
+
+                <CodeSnippets data={setLangData.splice(0, 1)[0]} />
+
                 <p className={Styles.step}>Step <span>5</span>: Time travel</p>
                 <p className={Styles.instruction}>You can move forward or backward from the current month by calling the
             <span> moveMonth </span>method on the<span> calendar </span>object with either<span> 'forward' </span> or
             <span> 'backward' </span>as a string argument on the method. This method can be chained with other
             methods including itself to get your desired results.
-            </p>
-                <Highlight className='javascript'>
-                    {`calendar.moveMonth('forward').getStructure().getInfo(1, {
-  dayNumber: true,
-  dayOfWeek: true,
-  monthOfYear: true,
-  year: true,
-  suffix: true
-})`}
-                </Highlight>
+        </p>
+
+                <CodeSnippets data={setLangData.splice(0, 1)[0]} />
+
                 <p className={Styles.instruction}>This returns information of the first day of the
-                next month <span>February</span>
-                as requested above from the current month.
-            </p>
-                <Highlight className='terminal'>
-                    {`{
-   dayNumber: 1,
-   dayOfWeek: 'Mon',
-   monthOfYear: 'February',
-   year: 2021,
-   suffix: 'st'
-}`}
-                </Highlight>
+            next month <span>February</span>
+            as requested above from the current month.
+        </p>
+
+                <CodeSnippets data={setLangData.splice(0, 1)[0]} />
 
             </div>
             <div className={Styles.downloadZIP} id="download">
-                <a href="../../data/calenda.js"><img src={require("../../assets/download.png")} width="10" height="12" alt="" /> Download</a>
+                <a href="./data/calenda.js" download><img src={require("../../assets/download.png")} width="10" height="12"
+                    alt="" /> Download</a>
             </div>
             <a href="" className={Styles.getNPM}>or get it on npm</a>
             <a href="https//github.com/redbossrabbit">
