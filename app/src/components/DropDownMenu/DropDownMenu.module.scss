@@ -1,11 +1,17 @@
-.dropDown {
-    height: 30vh;
+.dropdownCont {
+    overflow: hidden;
     display: flex;
-    flex-direction: column;
     margin-top: var(--navHeight);
     z-index: 1;
     position: fixed;
     width: 100vw;
+}
+
+.dropdown {
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     background-color: #fff;
     padding-bottom: 10px;
 
@@ -23,4 +29,18 @@
             margin: auto;
         }
     }
+}
+
+@keyframes drop {
+    0% {
+        height: 0px;
+    }
+
+    100% {
+        height: 30vh;
+    }
+}
+
+.animateDrop {
+    animation: drop 0.2s ease;
 }

@@ -9,6 +9,7 @@ const Home = () => {
     const openDropdown = () => {
         setDropdownOpen(prev => !prev);
     }
+    const data = { openDropdown: openDropdown, dropdownOpen: dropdownOpen }
     return (
         <main className={Styles.main}>
             <nav className={Styles.nav}>
@@ -20,7 +21,7 @@ const Home = () => {
                     </div>
                     <div>
                         <img src={require("../../assets/gears.png")} width="15" height="15" alt="" />
-                        <a href="#how-it-works">How it works</a>
+                        <a href="#how-to-use">How to use</a>
                     </div>
                     <div>
                         <svg height="32" viewBox="0 0 16 16" version="1.1" width="12" aria-hidden="true">
@@ -41,7 +42,7 @@ const Home = () => {
                     width="25" height="25" alt="" />
             </nav>
             {dropdownOpen &&
-                <DropDownMenu />}
+                <DropDownMenu data={data} />}
             {dropdownOpen && <div className={Styles.black} onClick={openDropdown}></div>}
 
             <header className={Styles.header}>
@@ -63,8 +64,7 @@ const Home = () => {
         scratch.<br />We've got
         you covered.
     </p>
-            <h2 className={Styles.howItWorks}><img src={require("../../assets/gears.png")} width="40" height="40" alt="" /> How
-        it works
+            <h2 className={Styles.howToUse} id="how-to-use"><img src={require("../../assets/gears.png")} width="40" height="40" alt="" /> How to use
     </h2>
             <div className={Styles.steps}>
                 <p className={Styles.step}>Step <span>1</span>: Install</p>
@@ -164,7 +164,7 @@ const calendar = new Calenda({
                 </Highlight>
 
             </div>
-            <div className={Styles.downloadZIP}>
+            <div className={Styles.downloadZIP} id="download">
                 <a href="../../data/calenda.js"><img src={require("../../assets/download.png")} width="10" height="12" alt="" /> Download</a>
             </div>
             <a href="" className={Styles.getNPM}>or get it on npm</a>
