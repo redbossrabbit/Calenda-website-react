@@ -136,7 +136,7 @@ const Home = () => {
                     alt="" /> Download</a>
             </div>
             <a href="" className={Styles.getNPM}>or get it on npm</a>
-            <a href="https//github.com/redbossrabbit">
+            <a href="https://github.com/redbossrabbit">
                 <div className={Styles.contributors}>
                     <h2>Contributor(s)</h2>
                     <div className={Styles.profileImage}></div>
