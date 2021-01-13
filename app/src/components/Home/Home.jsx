@@ -55,7 +55,7 @@ const Home = () => {
                 <p>We've abstracted the complexities of calculating dates for you to use<br />through our easy to use
             light-weight API.
         </p>
-                <a href="">Get started</a>
+                <a href="https://www.npmjs.com/package/calenda">Get started</a>
             </header>
             <h2 className={Styles.hero}>
                 Build your time management apps<br />faster <img src={require("../../assets/rocket.png")} width="30" height="30"
