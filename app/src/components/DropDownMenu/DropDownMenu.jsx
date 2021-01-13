@@ -9,7 +9,7 @@ const DropDownMenu = ({ data }) => {
             <div className={Styles.dropdown} id="drop-down" onClick={openDropdown}>
                 <div>
                     <img src={require('../../assets/pen.png')} width="10" height="10" alt="" />
-                    <a href="">Get started</a>
+                    <a href="https://www.npmjs.com/package/calenda">Get started</a>
                 </div>
                 <div>
                     <img src={require("../../assets/gears.png")} width="15" height="15" alt="" />
@@ -24,7 +24,7 @@ const DropDownMenu = ({ data }) => {
                             </path>
                         </g>
                     </svg>
-                    <a href="">Github</a>
+                    <a href="https://github.com/redbossrabbit/Calenda">Github</a>
                 </div>
                 <div>
                     <img src={require("../../assets/download.png")} width="10" height="12" alt="" />

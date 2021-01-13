@@ -1,6 +1,6 @@
 const languageData = [
     [
-        'npm install calenda', 'terminal'
+        'npm install --save-dev calenda', 'terminal'
     ],
     [
         `Import Calenda from 'calenda'

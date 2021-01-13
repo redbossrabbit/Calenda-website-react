@@ -20,7 +20,7 @@ const Home = () => {
                 <div className={Styles.menus}>
                     <div>
                         <img src={require("../../assets/pen.png")} width="10" height="10" alt="" />
-                        <a href="">Get started</a>
+                        <a href="https://www.npmjs.com/package/calenda">Get started</a>
                     </div>
                     <div>
                         <img src={require("../../assets/gears.png")} width="15" height="15" alt="" />
@@ -34,7 +34,7 @@ const Home = () => {
                                 </path>
                             </g>
                         </svg>
-                        <a href="">Github</a>
+                        <a href="https://github.com/redbossrabbit/Calenda">Github</a>
                     </div>
                     <div>
                         <img src={require("../../assets/download.png")} width="10" height="12" alt="" />
@@ -135,7 +135,7 @@ const Home = () => {
                 <a href="./data/calenda.js" download><img src={require("../../assets/download.png")} width="10" height="12"
                     alt="" /> Download</a>
             </div>
-            <a href="" className={Styles.getNPM}>or get it on npm</a>
+            <a href="https://www.npmjs.com/package/calenda" className={Styles.getNPM}>or get it on npm</a>
             <a href="https://github.com/redbossrabbit">
                 <div className={Styles.contributors}>
                     <h2>Contributor(s)</h2>
