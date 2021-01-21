@@ -2,6 +2,7 @@ import React from 'react'
 import Styles from './DropDownMenu.module.scss'
 
 const DropDownMenu = ({ data }) => {
+    
     const [openDropdown, dropdownOpen] = data;
 
     return (
