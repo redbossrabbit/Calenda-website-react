@@ -2,11 +2,13 @@ import React from 'react'
 import styles from './calendar-styles/Day.module.scss'
 
 let hasSelected = false;
+
 /**@param setDayData - object containing necessary info for setting days */
 const Day = ({
     id,
     setDayData
 }) => {
+    
     const {
         setDay,
         monthData,
