@@ -8,7 +8,7 @@ const Day = ({
     id,
     setDayData
 }) => {
-    
+
     const {
         setDay,
         monthData,
@@ -19,12 +19,19 @@ const Day = ({
     } = setDayData;
 
     const changeColor = () => {
+
         if (id === 0 || id === dayNumber) return;
+
         setDay(() => ({
+            
             ...setToToday(monthData, id)
+            
         }));
+
         setIsSetToToday(prev => prev ? !prev : prev);
+
         hasSelected = true;
+
     }
     return (
         <div onClick={changeColor} className={`${styles.day} ${(hasSelected && id===dayNumber) || (isSetToToday &&
