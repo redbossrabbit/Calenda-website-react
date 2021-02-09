@@ -1,50 +1,50 @@
 exports.__esModule = true;
-var date = new Date(),
-  dayWeekNum = date.getDay(),
-  today = date.getUTCDate(),
-  defYear = date.getFullYear(),
-  months = [
-    "January",
-    "Feburary",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
-  ],
-  daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-  months30 = ["September", "April", "June", "November"],
-  getMonthLength = function (month) {
-    switch (true) {
-      case months30.includes(months[month]):
-        return 30;
-      case month === 1:
-        return !(defYear % 4) ? 29 : 28;
-      default:
-        return 31;
-    }
-  },
-  getStartingDay = function (dayWeekNum, dayNum) {
-    return (7 + dayWeekNum - (dayNum - 7 * Math.floor(dayNum / 7) - 1)) % 7;
-  },
-  setDayOfWeekPrefix = function (id) {
-    var lastNum = ("" + id).slice(-1);
-    switch (true) {
-      case lastNum === "1" && id !== 11:
-        return "st";
-      case lastNum === "2" && id !== 12:
-        return "nd";
-      case lastNum === "3" && id !== 13:
-        return "rd";
-      default:
-        return "th";
-    }
-  };
+var date = new Date();
+var dayWeekNum = date.getDay();
+var today = date.getUTCDate();
+var defYear = date.getFullYear();
+var months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
+];
+var daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+var months30 = ["September", "April", "June", "November"];
+var getMonthLength = function (month) {
+  switch (true) {
+    case months30.includes(months[month]):
+      return 30;
+    case month === 1:
+      return !(defYear % 4) ? 29 : 28;
+    default:
+      return 31;
+  }
+};
+var getStartingDay = function (dayWeekNum, dayNum) {
+  return (7 + dayWeekNum - (dayNum - 7 * Math.floor(dayNum / 7) - 1)) % 7;
+};
+var setDayOfWeekPrefix = function (id) {
+  var lastNum = ("" + id).slice(-1);
+  switch (true) {
+    case lastNum === "1" && id !== 11:
+      return "st";
+    case lastNum === "2" && id !== 12:
+      return "nd";
+    case lastNum === "3" && id !== 13:
+      return "rd";
+    default:
+      return "th";
+  }
+};
 var Calenda = /** @class */ (function () {
   function Calenda(_a) {
     var _this = this;
@@ -146,10 +146,10 @@ var Calenda = /** @class */ (function () {
     this.startingDay = getStartingDay(dayWeekNum, today);
     this.monthIdx = months.indexOf(month);
     this.year = defYear;
-    this.structure = {};
-    this.info = {};
     this.currentMonth = this.monthIdx;
     this.prevMonth = undefined;
+    this.structure = {};
+    this.info = {};
   }
   return Calenda;
 })();
